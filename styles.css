@@ -1,0 +1,55 @@
+:root{
+  --bg:#ffffff;
+  --muted:#6b6f73;
+  --accent:#163b78;
+  --card:#ffffff;
+  --shadow: 0 6px 14px rgba(19,20,21,0.08);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:#222;
+}
+.ticket-app{
+  max-width:420px;
+  margin:0 auto;
+  padding:18px 18px 40px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+.top{display:flex;align-items:center;justify-content:space-between}
+.brand h1{margin:0;font-size:28px;letter-spacing:1px}
+.subtitle{margin:2px 0 0;color:var(--muted);font-size:14px}
+.close{background:none;border:0;font-size:20px;color:var(--muted)}
+.logo-area{display:flex;justify-content:center;padding:18px 0}
+.logo-ring{
+  width:140px;height:140px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--accent);
+  box-shadow:0 8px 18px rgba(22,59,120,0.18);
+  transform-origin:center center;
+}
+.logo-ring.pulse{animation:breathe 3000ms ease-in-out infinite}
+.logo-center{width:72%;height:72%;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.logo{
+  width:64%;height:64%;object-fit:contain;display:block
+}
+.time-area{display:flex;justify-content:center;margin-top:6px}
+.time{font-weight:700;font-size:40px;color:#3a3c3d;letter-spacing:0.5px}
+.card{margin:18px 6px 0;background:var(--card);padding:18px;border-radius:6px;box-shadow:var(--shadow)}
+.fare{margin:0;font-size:20px;font-weight:600}
+.location{margin:8px 0 12px;color:var(--muted)}
+.expires{margin:0;color:#3a3c3d}
+.spacer{flex:1}
+
+/* Larger phones */
+@media(min-width:420px){
+  .time{font-size:64px}
+  .logo-ring{width:180px;height:180px}
+  .logo{width:90px;height:90px}
+}
+
+@keyframes breathe{0%{transform:scale(1)}50%{transform:scale(1.09)}100%{transform:scale(1)}}
